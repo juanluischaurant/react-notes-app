@@ -1,13 +1,178 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.headerContainer {
+	margin: 0 auto;
+	max-width: 1000px;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container {
+	margin: 0 auto;
+	width: 80%;
+	max-width: 950px;
+}
+
+.searchContainer {
+	background-color: rgb(250, 250, 250);
+	border: 1.8px solid rgb(245, 245, 245);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	margin-bottom: 1rem;
+}
+.searchContainer input {
+	background: none;
+	border: none;
+	outline: none;
+	width: 100%;
+}
+
+.notes-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 1em;
+}
+
+.note {
+	line-height: 1.2rem;
+	font-family: monospace;
+	color: rgb(142, 112, 43);
+	padding: 1em;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: rgb(255, 252, 244);
+	border: solid 1.8px rgb(249, 230, 178);
+	min-height: 6rem;
+
+	/* keep the text white-spaces */
+	white-space: pre-wrap;
+}
+.note h3 {
+	font-size: 1.3rem;
+	color: rgb(91, 72, 24);
+	margin: 0 0 0.2rem 0;
+	font-family: sans-serif;
+	position: relative;
+	margin-bottom: 0.8rem;
+}
+.note h3:after {
+	content: '';
+	width: 100%;
+	border: solid 1px rgb(249, 230, 178);
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 1;
+}
+.note textarea {
+	font-family: monospace;
+	display: block;
+	width: 97%;
+	height: auto;
+	color: rgb(91, 72, 24);
+
+	background: none;
+	border: none;
+	outline: none;
+	resize: none;
+
+	overflow: hidden;
+}
+.note-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-top: 1.2rem;
+}
+.note-date {
+	color: rgb(91, 72, 24);
+	font-size: 0.8rem;
+}
+.edit-icon {
+	color: rgb(91, 72, 24);
+	font-size: 1.1rem;
+}
+.delete-icon {
+	color: rgb(91, 72, 24);
+	font-size: 1.1rem;
+}
+.delete-icon.disabled {
+	color: rgba(142, 112, 43, 0.253);
+}
+/* edit view */
+.update-note {
+}
+.update-note-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0.5rem;
+}
+.update-button {
+	cursor: pointer;
+	background: rgb(91, 72, 24);
+	padding: 0.5rem;
+	border-radius: 15px;
+	color: rgb(255, 252, 244);
+	font-weight: 800;
+	border: none;
+}
+
+.update-button.cancel {
+	color: rgb(91, 72, 24);
+	background: none;
+}
+
+.new-note {
+	background-color: rgb(168, 235, 231);
+	border: 1.8px solid rgb(114, 215, 210);
+}
+.new-note input {
+	font-weight: 800;
+	font-size: 1.3rem;
+	font-family: 'Segoe UI', sans-serif;
+	background: none;
+	color: rgb(29, 69, 68);
+	border: none;
+	margin-bottom: 0.5rem;
+	outline: none;
+	position: relative;
+}
+.new-note span textarea {
+	font-family: monospace;
+	color: rgb(29, 69, 68);
+}
+.note-footer.new {
+	align-items: center;
+	color: rgb(29, 69, 68);
+}
+
+.save-button {
+	color: rgb(29, 69, 68);
+	background: none;
+	border: none;
+	display: flex;
+	align-items: center;
+}
+.save-icon {
+	cursor: pointer;
+	background-color: rgb(48, 144, 134);
+	color: #fff;
+	font-size: 1.8em;
+	padding: 0.3em;
+	border-radius: 50%;
+	margin-left: 0.3em;
 }
